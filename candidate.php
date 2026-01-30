@@ -144,17 +144,16 @@
                             "<?php echo htmlspecialchars($candidate_info['candidate']['key_message']); ?>"
                         </p>
                     </div>
-                    <div class="space-y-3">
-                        <a href="https://sujanlama.com" target="_blank">
+                    <div class="flex flex-col">
+                        <a href="https://sujanlama.com" target="_blank" class="block">
                             <button
-                                class="w-full py-3 bg-primary text-white rounded-lg font-bold shadow-md hover:bg-opacity-90 transition-all">
+                                class="w-full py-3 bg-primary text-white rounded-t-lg font-bold shadow-md hover:bg-opacity-90 transition-all">
                                 Full Profile &amp; Bio
                             </button>
                         </a>
-
-                        <a href="https://forms.gle/cUi2Wy9VAPjMtcKH8" target="_blank">
+                        <a href="https://forms.gle/cUi2Wy9VAPjMtcKH8" target="_blank" class="block">
                             <button
-                                class="w-full py-3 bg-white dark:bg-transparent border-2 border-primary text-primary rounded-lg font-bold hover:bg-primary/5 transition-all">
+                                class="w-full py-3 bg-white dark:bg-transparent border-2 border-primary border-t-0 text-primary rounded-b-lg font-bold hover:bg-primary/5 transition-all">
                                 Ask For Help
                             </button>
                         </a>

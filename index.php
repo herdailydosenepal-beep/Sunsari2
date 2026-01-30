@@ -1,55 +1,75 @@
 <?php require_once 'includes/header.php'; ?>
 
-<!-- Header Section - Dynamic Stats -->
-
 <main class="max-w-7xl mx-auto p-4 md:p-8 space-y-12">
-    <!-- Section 1: Constituency Boundaries -->
-    <section>
+    <section class="mt-8">
         <div class="flex items-center gap-3 mb-6">
-            <span class="material-symbols-outlined text-primary text-3xl">grid_view</span>
-            <h2 class="text-2xl font-bold text-slate-800 dark:text-white">Constituency Boundaries</h2>
+            <span class="material-symbols-outlined text-primary text-3xl">badge</span>
+            <h2 class="text-2xl font-bold text-slate-800 dark:text-white">Candidate Details</h2>
         </div>
+
         <div
             class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
-            <div class="overflow-x-auto">
-                <table class="w-full text-left border-collapse">
-                    <thead>
-                        <tr class="bg-slate-50 dark:bg-slate-900/50">
-                            <th class="px-6 py-4 text-sm font-semibold text-slate-600 dark:text-slate-400">Local Unit
-                            </th>
-                            <th class="px-6 py-4 text-sm font-semibold text-slate-600 dark:text-slate-400">Wards Covered
-                            </th>
-                            <th class="px-6 py-4 text-sm font-semibold text-slate-600 dark:text-slate-400">Type</th>
-                            <th class="px-6 py-4 text-sm font-semibold text-slate-600 dark:text-slate-400">Population
-                                Density</th>
-                            <th class="px-6 py-4 text-sm font-semibold text-slate-600 dark:text-slate-400 text-right">
-                                Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
-                        <?php foreach ($local_units as $unit): ?>
-                            <tr class="hover:bg-slate-50/50 dark:hover:bg-slate-700/50 transition-colors">
-                                <td class="px-6 py-4 font-bold text-secondary">
-                                    <?php echo htmlspecialchars($unit['name']); ?>
-                                </td>
-                                <td class="px-6 py-4 text-slate-600 dark:text-slate-300">
-                                    <?php echo htmlspecialchars($unit['wards']); ?>
-                                </td>
-                                <td class="px-6 py-4"><span
-                                        class="<?php echo htmlspecialchars($unit['type_class']); ?> px-3 py-1 rounded-full text-xs font-medium"><?php echo htmlspecialchars($unit['type']); ?></span>
-                                </td>
-                                <td class="px-6 py-4 text-slate-600 dark:text-slate-300">
-                                    <?php echo htmlspecialchars($unit['density']); ?>
-                                </td>
-                                <td class="px-6 py-4 text-right"><button
-                                        class="text-primary hover:underline text-sm font-bold">Details</button></td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
+            <div class="h-1.5 bg-primary w-full"></div>
+
+            <div class="p-0">
+                <div class="flex flex-col md:flex-row items-stretch">
+
+                    <div
+                        class="md:w-1/3 lg:w-1/4 bg-slate-50 dark:bg-slate-900/30 border-b md:border-b-0 md:border-r border-slate-200 dark:border-slate-700">
+                        <div class="p-6 flex flex-col items-center justify-center h-full">
+                            <div
+                                class="w-32 h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden border-4 border-white dark:border-slate-700 shadow-md">
+                                <img class="w-full h-full object-cover"
+                                    alt="<?php echo htmlspecialchars($candidate_info['candidate']['name']); ?>"
+                                    src="<?php echo htmlspecialchars($candidate_info['candidate']['image']); ?>" />
+                            </div>
+                            <span
+                                class="mt-4 px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest rounded-full">
+                                Official Candidate
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="p-6 md:p-8 flex-1 flex flex-col justify-center">
+                        <div class="mb-4 text-center md:text-left">
+                            <h3 class="text-3xl font-black text-slate-800 dark:text-white mb-1">
+                                <?php echo htmlspecialchars($candidate_info['candidate']['name']); ?>
+                            </h3>
+                            <p
+                                class="text-primary font-bold text-sm flex items-center justify-center md:justify-start gap-2">
+                                <span><?php echo htmlspecialchars($candidate_info['candidate']['constituency']); ?></span>
+                                <span class="text-slate-300">•</span>
+                                <span
+                                    class="text-slate-500 dark:text-slate-400 font-medium"><?php echo htmlspecialchars($candidate_info['candidate']['affiliation']); ?></span>
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-slate-50 dark:bg-slate-900/50 p-4 rounded-lg border border-slate-100 dark:border-slate-700 mb-6">
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed italic">
+                                "<?php echo htmlspecialchars($candidate_info['candidate']['key_message']); ?>"
+                            </p>
+                        </div>
+
+                        <div
+                            class="grid grid-cols-1 sm:grid-cols-2 gap-0 border border-primary rounded-lg overflow-hidden">
+                            <a href="https://sujanlama.com" target="_blank"
+                                class="bg-primary text-white text-center py-3 font-bold hover:bg-opacity-90 transition-all text-sm">
+                                Full Profile & Bio
+                            </a>
+                            <a href="https://forms.gle/cUi2Wy9VAPjMtcKH8" target="_blank"
+                                class="bg-white dark:bg-transparent text-primary text-center py-3 font-bold hover:bg-primary/5 transition-all text-sm border-t sm:border-t-0 sm:border-l border-primary">
+                                Contact Now
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </section>
+
+
     <!-- Section 2: Demographics -->
     <section>
         <div class="flex items-center gap-3 mb-6">
@@ -60,11 +80,14 @@
             <?php foreach ($index_data['demographics'] as $demo): ?>
                 <div
                     class="bg-white dark:bg-slate-800 rounded-xl shadow-sm overflow-hidden border border-slate-200 dark:border-slate-700">
-                    <div class="bg-secondary text-white px-4 py-3 font-bold"><?php echo htmlspecialchars($demo['name']); ?>
-                        <?php echo isset($demo['wards']) ? '(' . htmlspecialchars($demo['wards']) . ')' : ''; ?></div>
+                    <div class="bg-secondary text-white px-4 py-3 font-bold">
+                        <?php echo htmlspecialchars($demo['name']); ?>
+                        <?php echo isset($demo['wards']) ? '(' . htmlspecialchars($demo['wards']) . ')' : ''; ?>
+                    </div>
                     <div class="p-5 space-y-4">
                         <div>
-                            <p class="text-xs text-slate-500 uppercase font-bold tracking-tighter mb-1">Population Breakdown
+                            <p class="text-xs text-slate-500 uppercase font-bold tracking-tighter mb-1">Population
+                                Breakdown
                             </p>
                             <div class="flex justify-between text-sm">
                                 <span>Male: <?php echo htmlspecialchars($demo['male_population']); ?></span>
@@ -84,7 +107,8 @@
                         <div class="pt-2 border-t border-slate-100 dark:border-slate-700 text-xs space-y-2">
                             <p><strong class="text-slate-800 dark:text-slate-200">Area:</strong>
                                 <?php echo htmlspecialchars($demo['area']); ?>
-                                <?php echo htmlspecialchars($demo['area_unit']); ?></p>
+                                <?php echo htmlspecialchars($demo['area_unit']); ?>
+                            </p>
                             <p><strong class="text-slate-800 dark:text-slate-200">Main Groups:</strong>
                                 <?php echo htmlspecialchars($demo['main_groups']); ?></p>
                         </div>
@@ -111,8 +135,10 @@
                         </div>
                         <div>
                             <h3 class="font-bold text-slate-800 dark:text-white">
-                                <?php echo htmlspecialchars($landmark['name']); ?></h3>
-                            <p class="text-sm text-slate-500 mb-2"><?php echo htmlspecialchars($landmark['location']); ?>
+                                <?php echo htmlspecialchars($landmark['name']); ?>
+                            </h3>
+                            <p class="text-sm text-slate-500 mb-2">
+                                <?php echo htmlspecialchars($landmark['location']); ?>
                             </p>
                             <span
                                 class="text-xs bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded"><?php echo htmlspecialchars($landmark['type']); ?></span>
@@ -150,8 +176,10 @@
                                 </div>
                                 <div>
                                     <p class="font-bold text-slate-800 dark:text-white">
-                                        <?php echo htmlspecialchars($issue['title']); ?></p>
-                                    <p class="text-sm text-slate-500"><?php echo htmlspecialchars($issue['description']); ?>
+                                        <?php echo htmlspecialchars($issue['title']); ?>
+                                    </p>
+                                    <p class="text-sm text-slate-500">
+                                        <?php echo htmlspecialchars($issue['description']); ?>
                                     </p>
                                 </div>
                             </li>

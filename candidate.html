@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Sunsari-2 News and Candidate Profile</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#db143c",
+                        "secondary": "#1E40AF",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#211114",
+                    },
+                    fontFamily: {
+                        "display": ["Newsreader", "serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Newsreader', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-[#0e111b] dark:text-white antialiased">
+    <!-- Header / TopNavBar -->
+    <header class="bg-primary text-white py-6 px-4 md:px-12 shadow-lg">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-4xl">map</span>
+                <div>
+                    <h1 class="text-2xl font-bold leading-tight">Sunsari-2 Constituency</h1>
+                    <p class="text-white/80 text-sm">Koshi Province, Nepal • Data Management System</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full md:w-auto">
+                <div class="bg-white/10 p-3 rounded-lg border border-white/20">
+                    <p class="text-xs uppercase tracking-wider opacity-80">Total Population</p>
+                    <p class="text-xl font-bold">254,000</p>
+                </div>
+                <div class="bg-white/10 p-3 rounded-lg border border-white/20">
+                    <p class="text-xs uppercase tracking-wider opacity-80">Total Area</p>
+                    <p class="text-xl font-bold">312 <span class="text-sm font-normal">km²</span></p>
+                </div>
+                <div class="bg-white/10 p-3 rounded-lg border border-white/20">
+                    <p class="text-xs uppercase tracking-wider opacity-80">Literacy Rate</p>
+                    <p class="text-xl font-bold">72.5%</p>
+                </div>
+                <div class="bg-white/10 p-3 rounded-lg border border-white/20">
+                    <p class="text-xs uppercase tracking-wider opacity-80">Local Units</p>
+                    <p class="text-xl font-bold">5 Units</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-[1200px] mx-auto px-4 md:px-10 py-6">
+        <!-- Breadcrumbs -->
+        <div class="flex flex-wrap gap-2 py-2">
+            <a class="text-[#4e5e97] dark:text-gray-400 text-sm font-medium hover:underline" href="#">Home</a>
+            <span class="text-[#4e5e97] text-sm">/</span>
+            <span class="text-[#0e111b] dark:text-white text-sm font-bold">News &amp; Candidate Feed</span>
+        </div>
+        <!-- Page Heading -->
+        <div class="flex flex-col gap-3 py-6">
+            <h1 class="text-[#0e111b] dark:text-white text-5xl font-black leading-tight tracking-tighter">Election
+                Central: Sunsari-2</h1>
+            <p class="text-[#4e5e97] dark:text-gray-400 text-lg max-w-2xl leading-relaxed">The authoritative source for
+                news, development updates, and constituency profiles for the voters of Sunsari-2.</p>
+        </div>
+        <!-- Search & Filters -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center mb-8">
+            <div class="md:col-span-3">
+                <label class="flex flex-col h-12 w-full">
+                    <div
+                        class="flex w-full flex-1 items-stretch rounded-lg bg-white dark:bg-background-dark border border-gray-200 dark:border-gray-700 h-full overflow-hidden shadow-sm">
+                        <div class="text-[#4e5e97] flex items-center justify-center pl-4">
+                            <span class="material-symbols-outlined">search</span>
+                        </div>
+                        <input
+                            class="form-input flex w-full border-none bg-transparent focus:ring-0 text-[#0e111b] dark:text-white placeholder:text-[#4e5e97] px-4 text-base font-normal"
+                            placeholder="Search news by topic or local unit (Inaruwa, Itahari)..." />
+                    </div>
+                </label>
+            </div>
+            <div class="flex gap-2">
+                <button
+                    class="flex-1 flex h-12 items-center justify-center gap-2 rounded-lg bg-white dark:bg-background-dark border border-gray-200 dark:border-gray-700 text-[#0e111b] dark:text-white font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                    <span class="material-symbols-outlined text-xl">tune</span>
+                    <span>Filters</span>
+                </button>
+            </div>
+        </div>
+        <!-- Units Chips -->
+        <div class="flex gap-3 overflow-x-auto pb-6 scrollbar-hide">
+            <button
+                class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary text-white px-5 font-bold shadow-md">
+                <span>All Units</span>
+            </button>
+            <button
+                class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-5 text-sm font-medium hover:bg-gray-50">
+                <span>Inaruwa</span>
+                <span class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
+            </button>
+            <button
+                class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-5 text-sm font-medium hover:bg-gray-50">
+                <span>Itahari</span>
+                <span class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
+            </button>
+            <button
+                class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-5 text-sm font-medium hover:bg-gray-50">
+                <span>Ramdhuni</span>
+                <span class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
+            </button>
+            <button
+                class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-5 text-sm font-medium hover:bg-gray-50">
+                <span>Development</span>
+                <span class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
+            </button>
+        </div>
+        <div class="flex flex-col lg:flex-row gap-10">
+            <!-- Blog Section (Main Content) -->
+            <div class="flex-1 space-y-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Article 1 -->
+                    <article
+                        class="flex flex-col group cursor-pointer bg-white dark:bg-background-dark rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="relative aspect-video overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                data-alt="Local road construction project in Sunsari-2 area"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcxqLNZcEZG_kFbtBdVFbHlFLPiqz7Po3_BUh5bFbABAh28O2953oJhqondVNcEAu0aDcYKzgmlwAQsE6uwBqx4bnjbDdnwI4VPbb6pA9-yWI0mwVF1p9bxgzLK8byMHlff5dpLEoSF6MDcttTGSl_KWCYGC55gPg0FNvmt9OgPBfeOy2hSeeacyi4LFBoAtrupKFtANVNogTOsCCmi3poia29R5-P3uLly4voQETlFRvdLqg1QyH7P_ihEe1bFk0tQqR-QWZiUL2L" />
+                            <span
+                                class="absolute top-4 left-4 bg-accent-crimson text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">Development</span>
+                        </div>
+                        <div class="p-6">
+                            <div class="text-[#4e5e97] text-xs font-bold mb-2 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-sm">calendar_today</span>
+                                October 12, 2023
+                            </div>
+                            <h3 class="text-xl font-bold leading-tight mb-3 group-hover:text-primary transition-colors">
+                                Major Highway Project Expansion Reaches Inaruwa Segment</h3>
+                            <p class="text-[#4e5e97] dark:text-gray-400 text-sm line-clamp-3 leading-relaxed">The
+                                multi-million rupee highway expansion has reached the Inaruwa segment of Sunsari-2,
+                                promising improved connectivity and economic growth for local businesses...</p>
+                            <div
+                                class="mt-6 flex items-center text-primary font-bold text-sm gap-1 group-hover:translate-x-1 transition-transform">
+                                Read More <span class="material-symbols-outlined">trending_flat</span>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Article 2 -->
+                    <article
+                        class="flex flex-col group cursor-pointer bg-white dark:bg-background-dark rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="relative aspect-video overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                data-alt="Community gathering for election awareness program"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1-7PCuvOVj8lyPtklNnfVXIZfs3MkgFvAS_DY0eqlPs6btPRHzWsoJE6rJhr09OmShf-hs1nLtRFSfoo-rMPrEYd_0IeQYLAerPZJwa1qH5TJXoMGQO--3_sKlcXfj4AaJIZEY8ym2ms2xaCYDQXtXJuK1XEuUXgNP1Tsb0TSJNPXM1gYWrJoJJC59haWxICuxGxqxXtCPpKW0Cs3NW2_dOozR_eYDGniNbnIceYNPibhitXf6YEIBCtq_Ozn4NlzxWC9p2VXBIdH" />
+                            <span
+                                class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">Election</span>
+                        </div>
+                        <div class="p-6">
+                            <div class="text-[#4e5e97] text-xs font-bold mb-2 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-sm">calendar_today</span>
+                                October 10, 2023
+                            </div>
+                            <h3 class="text-xl font-bold leading-tight mb-3 group-hover:text-primary transition-colors">
+                                Voter Awareness Campaign Launched Across 12 Local Wards</h3>
+                            <p class="text-[#4e5e97] dark:text-gray-400 text-sm line-clamp-3 leading-relaxed">The
+                                Election Commission has kicked off a comprehensive awareness campaign focusing on the
+                                youth demographic in Itahari and surrounding villages to ensure high turnout...</p>
+                            <div
+                                class="mt-6 flex items-center text-primary font-bold text-sm gap-1 group-hover:translate-x-1 transition-transform">
+                                Read More <span class="material-symbols-outlined">trending_flat</span>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Article 3 -->
+                    <article
+                        class="flex flex-col group cursor-pointer bg-white dark:bg-background-dark rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="relative aspect-video overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                data-alt="New agricultural facility opening ceremony"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhk81XGtD74Q6NIhTuxH5Y6A_MLP6RQRdQFzN3jYUIufPfxuhagNJTT_IIAm_6a39NUdWVttt6hI_lT-sSmJisEClqjLF2abWqFsb8PG_76DEh7_Iv3_5nkbC6EZNuUHseHdQGpw0Eg8Bl46KL2z82vhpqyvqFE02tumYfpwwW1YjRznOMULDxBSfsskjc0dL3CmAI3uU31miHl101BubCbk_CIDGqeABffXas2OFK4fax25nhLKcGe1M33ERlz6GSjkF2I_UyldxU" />
+                            <span
+                                class="absolute top-4 left-4 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">Community</span>
+                        </div>
+                        <div class="p-6">
+                            <div class="text-[#4e5e97] text-xs font-bold mb-2 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-sm">calendar_today</span>
+                                October 08, 2023
+                            </div>
+                            <h3 class="text-xl font-bold leading-tight mb-3 group-hover:text-primary transition-colors">
+                                Sustainable Irrigation System Inaugurated for Local Farmers</h3>
+                            <p class="text-[#4e5e97] dark:text-gray-400 text-sm line-clamp-3 leading-relaxed">A new
+                                solar-powered irrigation facility has been handed over to the community cooperative,
+                                benefiting over 400 households in the rural outskirts of Sunsari-2...</p>
+                            <div
+                                class="mt-6 flex items-center text-primary font-bold text-sm gap-1 group-hover:translate-x-1 transition-transform">
+                                Read More <span class="material-symbols-outlined">trending_flat</span>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Article 4 -->
+                    <article
+                        class="flex flex-col group cursor-pointer bg-white dark:bg-background-dark rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="relative aspect-video overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                data-alt="Political debate stage with banners"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBU4ulrgPD8Y21LIiFyTxhLzdM7a-UJQDkRcXlcCb_VzOweFKUhcX3xBNutU6Hp_PFF_dPKqXFaQ8zeDV6XHKOqzak8Ouqbq6OMtoWabZwokW9GXzHIRzwIiodRkC6npV5TG3gl0mk2NWJ1bVuyvGd4J0epoHlfFDZlEeLD1YlJS1y7xyOVaF-NfWL4vaqlzsHDVRLInrfxOSdH4kqNWVCMfy2Pwau-wNq7HbbYuo9ZoIaVsKtGlnnc2cAYjWS8E-AljDndq6eODM0-" />
+                            <span
+                                class="absolute top-4 left-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">Politics</span>
+                        </div>
+                        <div class="p-6">
+                            <div class="text-[#4e5e97] text-xs font-bold mb-2 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-sm">calendar_today</span>
+                                October 05, 2023
+                            </div>
+                            <h3 class="text-xl font-bold leading-tight mb-3 group-hover:text-primary transition-colors">
+                                Key Candidates Hold First Public Forum in Itahari Sub-Metro</h3>
+                            <p class="text-[#4e5e97] dark:text-gray-400 text-sm line-clamp-3 leading-relaxed">The
+                                much-anticipated public forum saw major candidates discussing their manifestos on urban
+                                planning, waste management, and youth employment opportunities...</p>
+                            <div
+                                class="mt-6 flex items-center text-primary font-bold text-sm gap-1 group-hover:translate-x-1 transition-transform">
+                                Read More <span class="material-symbols-outlined">trending_flat</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="flex justify-center py-8">
+                    <button
+                        class="px-8 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg font-bold text-primary hover:bg-gray-50 transition-colors flex items-center gap-2 shadow-sm">
+                        View More Articles
+                        <span class="material-symbols-outlined">expand_more</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Sidebar -->
+            <aside class="w-full lg:w-80 space-y-8">
+                <!-- Meet the Candidate Widget -->
+                <div
+                    class="bg-white dark:bg-background-dark border border-gray-100 dark:border-gray-800 rounded-xl overflow-hidden shadow-lg">
+                    <div class="p-1 bg-accent-crimson"></div>
+                    <div class="p-6 text-center">
+                        <div
+                            class="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white shadow-md mb-4">
+                            <img class="w-full h-full object-cover" data-alt="Professional portrait of the candidate"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcnmCoZuo1tCwIKJKNyvIKFKLRqgu3QfYZza9xq73WWMFbYxkZWhUTN5rUJlSgzEFlSjwwpXA3jQRyfLsBE5NgFFV5QuV9cGuh-5yh6DUCibCsP1xMIc-S5cgSojsV9zmlL6ivGjVbxTLg2RFZ0fU7G_YRFpzkY_2mID9Rgc7XsoeZ76ts2BAsplVILY7wiRwyBmNAa_aOXKfuYx3kH1O7B0ENPYlQeqRWJSTvVprJ3q_mItyTW50xGUPOw4tCwPGVGIcDf9YS-0OS" />
+                        </div>
+                        <h4 class="text-2xl font-black text-[#0e111b] dark:text-white leading-tight">Shri Ram Chaudhary
+                        </h4>
+                        <p class="text-primary text-sm font-bold mb-4">Candidate for Sunsari-2</p>
+                        <div class="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-lg text-left mb-6">
+                            <p class="text-[#4e5e97] dark:text-gray-400 text-sm leading-relaxed italic">
+                                "My mission is to build a prosperous Sunsari-2 through transparent governance and
+                                modernized agriculture. Together, we can transform our community."
+                            </p>
+                        </div>
+                        <div class="space-y-3">
+                            <button
+                                class="w-full py-3 bg-primary text-white rounded-lg font-bold shadow-md hover:bg-opacity-90 transition-all">
+                                Full Profile &amp; Bio
+                            </button>
+                            <button
+                                class="w-full py-3 bg-white dark:bg-transparent border-2 border-primary text-primary dark:text-primary-light rounded-lg font-bold hover:bg-primary/5 transition-all">
+                                View Mission Statement
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Recent Updates List -->
+                <div
+                    class="bg-white dark:bg-background-dark border border-gray-100 dark:border-gray-800 rounded-xl p-6 shadow-sm">
+                    <h5 class="text-lg font-black mb-4 flex items-center gap-2 border-b pb-2 dark:border-gray-800">
+                        <span class="material-symbols-outlined text-accent-crimson">bolt</span>
+                        Recent Updates
+                    </h5>
+                    <div class="space-y-4">
+                        <a class="block group" href="#">
+                            <p class="text-xs text-[#4e5e97] dark:text-gray-400 mb-1">15 mins ago</p>
+                            <p
+                                class="text-sm font-bold leading-snug group-hover:text-primary transition-colors line-clamp-2">
+                                Emergency council meeting called for Inaruwa Ward-4 flooding concerns.</p>
+                        </a>
+                        <hr class="dark:border-gray-800" />
+                        <a class="block group" href="#">
+                            <p class="text-xs text-[#4e5e97] dark:text-gray-400 mb-1">2 hours ago</p>
+                            <p
+                                class="text-sm font-bold leading-snug group-hover:text-primary transition-colors line-clamp-2">
+                                Election Commission releases updated list of polling station security protocols.</p>
+                        </a>
+                        <hr class="dark:border-gray-800" />
+                        <a class="block group" href="#">
+                            <p class="text-xs text-[#4e5e97] dark:text-gray-400 mb-1">Yesterday</p>
+                            <p
+                                class="text-sm font-bold leading-snug group-hover:text-primary transition-colors line-clamp-2">
+                                New healthcare clinic project proposed for the Ramdhuni industrial corridor.</p>
+                        </a>
+                    </div>
+                    <button class="w-full mt-6 text-sm font-bold text-[#4e5e97] hover:text-primary transition-colors">
+                        View All Updates
+                    </button>
+                </div>
+                <!-- Newsletter / Stay Updated -->
+                <div class="bg-primary rounded-xl p-6 text-white shadow-lg overflow-hidden relative">
+                    <div class="absolute -right-4 -bottom-4 opacity-10">
+                        <span class="material-symbols-outlined text-9xl">campaign</span>
+                    </div>
+                    <h5 class="text-lg font-bold mb-2">Stay Informed</h5>
+                    <p class="text-xs text-white/80 mb-4">Get the latest constituency news and election alerts directly
+                        in your inbox.</p>
+                    <div class="space-y-2">
+                        <input
+                            class="w-full rounded-lg bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:ring-white h-10 text-sm"
+                            placeholder="Email Address" type="email" />
+                        <button
+                            class="w-full bg-accent-crimson text-white font-bold py-2 rounded-lg text-sm shadow-md">Subscribe
+                            Now</button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+    <footer class="bg-white dark:bg-background-dark border-t border-gray-200 dark:border-gray-800 py-10 mt-12">
+        <div class="max-w-[1200px] mx-auto px-4 md:px-10 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-4">
+                <div class="size-6 text-accent-crimson">
+                    <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd"
+                            d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z"
+                            fill="currentColor" fill-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <p class="text-sm font-bold text-[#0e111b] dark:text-white">© 2023 Sunsari-2 Election Portal</p>
+            </div>
+            <div class="flex gap-6">
+                <a class="text-[#4e5e97] hover:text-primary transition-colors text-sm" href="#">Privacy Policy</a>
+                <a class="text-[#4e5e97] hover:text-primary transition-colors text-sm" href="#">Terms of Use</a>
+                <a class="text-[#4e5e97] hover:text-primary transition-colors text-sm" href="#">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

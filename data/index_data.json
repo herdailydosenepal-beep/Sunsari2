@@ -1,0 +1,178 @@
+{
+    "landmarks": [
+        {
+            "name": "Chatara Bridge",
+            "location": "Inaruwa-Chatara Border",
+            "type": "Infrastructure",
+            "icon": "domain"
+        },
+        {
+            "name": "Koshi Tappu Wildlife Reserve",
+            "location": "Near Dewangunj",
+            "type": "Natural Reserve",
+            "icon": "park"
+        },
+        {
+            "name": "Itahari Main Chowk",
+            "location": "Itahari Sub-Metropolitan",
+            "type": "Urban Center",
+            "icon": "location_city"
+        },
+        {
+            "name": "Inaruwa Market",
+            "location": "Inaruwa Municipality",
+            "type": "Commercial Hub",
+            "icon": "store"
+        },
+        {
+            "name": "Ramdhuni Temple Complex",
+            "location": "Ramdhuni Municipality",
+            "type": "Religious Site",
+            "icon": "temple_hindu"
+        },
+        {
+            "name": "Sunsari Campus",
+            "location": "Inaruwa",
+            "type": "Education",
+            "icon": "school"
+        }
+    ],
+    "key_issues": {
+        "rural": [
+            {
+                "title": "Agricultural Modernization",
+                "description": "Need for irrigation facilities and modern farming techniques",
+                "icon": "agriculture",
+                "icon_bg_color": "bg-green-100",
+                "icon_text_color": "text-green-600",
+                "severity": 85
+            },
+            {
+                "title": "Road Connectivity",
+                "description": "Poor road conditions in Dewangunj and Harinagara rural areas",
+                "icon": "alt_route",
+                "icon_bg_color": "bg-orange-100",
+                "icon_text_color": "text-orange-600",
+                "severity": 78
+            },
+            {
+                "title": "Electricity & Water",
+                "description": "Irregular power supply and clean drinking water access",
+                "icon": "water_drop",
+                "icon_bg_color": "bg-blue-100",
+                "icon_text_color": "text-blue-600",
+                "severity": 72
+            },
+            {
+                "title": "Healthcare Access",
+                "description": "Limited health posts and medical facilities in remote areas",
+                "icon": "local_hospital",
+                "icon_bg_color": "bg-red-100",
+                "icon_text_color": "text-red-600",
+                "severity": 90
+            }
+        ],
+        "urban": [
+            {
+                "title": "Traffic Congestion",
+                "description": "Heavy traffic in Itahari and Inaruwa commercial areas",
+                "icon": "traffic",
+                "icon_bg_color": "bg-red-100",
+                "icon_text_color": "text-red-600",
+                "severity": 82
+            },
+            {
+                "title": "Waste Management",
+                "description": "Inadequate garbage collection and disposal systems",
+                "icon": "delete",
+                "icon_bg_color": "bg-yellow-100",
+                "icon_text_color": "text-yellow-700",
+                "severity": 75
+            },
+            {
+                "title": "Urban Planning",
+                "description": "Unplanned development and lack of green spaces",
+                "icon": "apartment",
+                "icon_bg_color": "bg-purple-100",
+                "icon_text_color": "text-purple-600",
+                "severity": 68
+            },
+            {
+                "title": "Air Pollution",
+                "description": "Increasing air quality issues in Itahari urban core",
+                "icon": "air",
+                "icon_bg_color": "bg-gray-100",
+                "icon_text_color": "text-gray-600",
+                "severity": 70
+            }
+        ],
+        "youth": [
+            {
+                "title": "Employment Opportunities",
+                "description": "Limited job prospects forcing youth migration abroad",
+                "icon": "work",
+                "icon_bg_color": "bg-indigo-100",
+                "icon_text_color": "text-indigo-600",
+                "severity": 88
+            },
+            {
+                "title": "Skill Development",
+                "description": "Lack of vocational training and technical education centers",
+                "icon": "psychology",
+                "icon_bg_color": "bg-teal-100",
+                "icon_text_color": "text-teal-600",
+                "severity": 80
+            },
+            {
+                "title": "Entrepreneurship Support",
+                "description": "Need for startup incubators and business financing",
+                "icon": "rocket_launch",
+                "icon_bg_color": "bg-pink-100",
+                "icon_text_color": "text-pink-600",
+                "severity": 73
+            },
+            {
+                "title": "Digital Infrastructure",
+                "description": "Poor internet connectivity affecting online education and business",
+                "icon": "wifi",
+                "icon_bg_color": "bg-blue-100",
+                "icon_text_color": "text-blue-600",
+                "severity": 76
+            }
+        ],
+        "women": [
+            {
+                "title": "Women's Safety",
+                "description": "Concerns about safety in public spaces and transportation",
+                "icon": "shield",
+                "icon_bg_color": "bg-purple-100",
+                "icon_text_color": "text-purple-600",
+                "severity": 85
+            },
+            {
+                "title": "Economic Empowerment",
+                "description": "Limited access to financial resources and business training",
+                "icon": "account_balance",
+                "icon_bg_color": "bg-green-100",
+                "icon_text_color": "text-green-600",
+                "severity": 79
+            },
+            {
+                "title": "Maternal Healthcare",
+                "description": "Need for improved maternity services and childcare facilities",
+                "icon": "pregnant_woman",
+                "icon_bg_color": "bg-pink-100",
+                "icon_text_color": "text-pink-600",
+                "severity": 81
+            },
+            {
+                "title": "Education Access",
+                "description": "Higher dropout rates among girls in rural municipalities",
+                "icon": "menu_book",
+                "icon_bg_color": "bg-yellow-100",
+                "icon_text_color": "text-yellow-700",
+                "severity": 74
+            }
+        ]
+    }
+}

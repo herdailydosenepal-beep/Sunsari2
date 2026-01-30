@@ -136,17 +136,19 @@ $t = $translations[$lang];
     <!-- Universal Header Section -->
     <header class="bg-primary text-white py-6 px-4 md:px-12 shadow-lg">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <a href="index.php" class="flex items-center gap-4">
-                <span class="material-symbols-outlined text-4xl">map</span>
+            <a href="index" class="flex items-center gap-4 group">
+                <div class=" p-2 rounded-lg shadow-sm group-hover:shadow-md transition-all">
+                    <img src="assets/images/logo.png" alt="Sunsari-2 Logo" class="h-14 w-auto object-contain">
+                </div>
                 <div>
-                    <h1 class="text-2xl font-bold leading-tight">Sunsari-2 Constituency</h1>
+                    <h1 class="text-2xl font-bold leading-tight">News Sunsari-2</h1>
                     <p class="text-white/80 text-sm">Koshi Province, Nepal • Data Management System</p>
                 </div>
             </a>
             <nav class="flex gap-4">
-                <a href="index.php" class="text-white/80 hover:text-white font-bold">Home</a>
-                <a href="candidate.php" class="text-white/80 hover:text-white font-bold">Candidate</a>
-                <a href="blogs.php" class="text-white/80 hover:text-white font-bold">Blog</a>
+                <a href="/" class="text-white/80 hover:text-white font-bold">Home</a>
+                <a href="/candidate" class="text-white/80 hover:text-white font-bold">Candidate</a>
+                <a href="/blogs" class="text-white/80 hover:text-white font-bold">Blog</a>
             </nav>
         </div>
     </header>

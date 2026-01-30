@@ -1,0 +1,56 @@
+{
+    "candidates": [
+        {
+            "id": "1",
+            "name": "Sujan Lama",
+            "party": "Independent",
+            "position": "House of Representatives Candidate",
+            "image": "assets/images/candidates/sujanlama.png",
+            "education": "Master's in Political Science",
+            "experience": "15+ years in public service",
+            "focus_areas": ["Agriculture Development", "Youth Employment", "Healthcare Reform", "Infrastructure"],
+            "slogan": "Building Tomorrow, Today",
+            "contact": {
+                "phone": "+977-9800000000",
+                "email": "contact@sujanlama.com",
+                "website": "https://sujanlama.com"
+            },
+            "featured": true,
+            "description": "Visionary leader committed to transforming Sunsari-2 through sustainable development, youth empowerment, and inclusive governance. With over 15 years of dedicated public service, Sujan Lama brings proven leadership and deep understanding of local issues."
+        },
+        {
+            "id": "2",
+            "name": "Rajib Koirala",
+            "party": "Nepali Congress",
+            "position": "House of Representatives Candidate",
+            "image": "assets/images/candidates/rajibkoirala.png",
+            "education": "Bachelor's in Law",
+            "experience": "20+ years in politics",
+            "focus_areas": ["Education", "Rural Development", "Water Management"],
+            "slogan": "Stability and Progress",
+            "contact": {
+                "phone": "+977-9800000001",
+                "email": "rajib.koirala@example.com"
+            },
+            "featured": false,
+            "description": "Experienced political leader focused on regional stability, educational reform, and improving rural infrastructure across Sunsari."
+        },
+        {
+            "id": "3",
+            "name": "Lal Bikram Thapa",
+            "party": "CPN-UML",
+            "position": "House of Representatives Candidate",
+            "image": "assets/images/candidates/lalbikram.png",
+            "education": "Master's in Sociology",
+            "experience": "12 years in local governance",
+            "focus_areas": ["Social Justice", "Urban Planning", "Healthcare"],
+            "slogan": "Prosperous Sunsari",
+            "contact": {
+                "phone": "+977-9800000002",
+                "email": "lalbikram@example.com"
+            },
+            "featured": false,
+            "description": "Advocate for social equality and modern urban development, dedicated to building a smarter and more inclusive Sunsari-2."
+        }
+    ]
+}

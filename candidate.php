@@ -1,185 +1,211 @@
 <?php require_once 'includes/header.php'; ?>
 
-<main class="max-w-[1200px] mx-auto px-4 md:px-10 py-6">
-    <!-- Breadcrumbs -->
-    <div class="flex flex-wrap gap-2 py-2">
-        <a class="text-[#4e5e97] dark:text-gray-400 text-sm font-medium hover:underline" href="index.php">Home</a>
-        <span class="text-[#4e5e97] text-sm">/</span>
-        <span class="text-[#0e111b] dark:text-white text-sm font-bold">Candidate Profile</span>
-    </div>
+<?php
+// Get candidate ID from URL
+$candidate_id = isset($_GET['id']) ? htmlspecialchars($_GET['id']) : null;
 
-    <!-- Page Heading -->
-    <div class="flex flex-col gap-3 py-6">
-        <h1 class="text-[#0e111b] dark:text-white text-5xl font-black leading-tight tracking-tighter">
-            <?php echo htmlspecialchars($candidate_name); ?> for Sunsari-2 | Political Vision & Commitments
-        </h1>
-        <p class="text-[#4e5e97] dark:text-gray-400 text-lg max-w-2xl leading-relaxed">Meet
-            <?php echo htmlspecialchars($candidate_name); ?>, the candidate for Sunsari-2 constituency. Learn about the
-            political vision, development priorities, and commitments to the region.
-        </p>
-    </div>
+// Find the candidate
+$selected_candidate = null;
+if ($candidate_id && !empty($candidates_data['candidates'])) {
+    foreach ($candidates_data['candidates'] as $cand) {
+        if ($cand['id'] == $candidate_id) {
+            $selected_candidate = $cand;
+            break;
+        }
+    }
+}
 
-    <div class="flex flex-col lg:flex-row gap-10">
-        <!-- Main Content -->
-        <div class="flex-1 space-y-8">
-            <!-- Candidate Background -->
-            <article
-                class="bg-white dark:bg-background-dark p-8 rounded-xl border border-gray-100 dark:border-gray-800">
-                <h2 class="text-3xl font-bold text-secondary mb-4">Background & Experience</h2>
-                <div class="space-y-4">
-                    <p class="text-lg leading-relaxed"><strong>Education:</strong>
-                        <?php echo htmlspecialchars($candidate_info['background']['education']); ?></p>
-                    <p class="text-lg leading-relaxed"><strong>Professional Background:</strong></p>
-                    <ul class="list-disc pl-5">
-                        <?php foreach ($candidate_info['background']['professional_background'] as $item): ?>
-                            <li><?php echo htmlspecialchars($item); ?></li>
-                        <?php endforeach; ?>
-                    </ul>
-                    <p class="text-lg leading-relaxed"><strong>Family Background:</strong>
-                        <?php echo htmlspecialchars($candidate_info['background']['family_background']); ?></p>
-                    <p class="text-lg leading-relaxed"><strong>Community Connection:</strong>
-                        <?php echo htmlspecialchars($candidate_info['background']['community_connection']); ?></p>
-                </div>
-            </article>
-
-            <!-- Political Journey -->
-            <article
-                class="bg-white dark:bg-background-dark p-8 rounded-xl border border-gray-100 dark:border-gray-800">
-                <h2 class="text-3xl font-bold text-secondary mb-4">Political Journey</h2>
-                <div class="space-y-4">
-                    <p class="text-lg leading-relaxed"><strong>Experience:</strong>
-                        <?php echo htmlspecialchars($candidate_info['political_journey']['experience']); ?></p>
-                    <p class="text-lg leading-relaxed"><strong>Party Affiliation:</strong>
-                        <?php echo htmlspecialchars($candidate_info['political_journey']['party_affiliation']); ?></p>
-                    <p class="text-lg leading-relaxed"><strong>Organizational Roles:</strong></p>
-                    <ul class="list-disc pl-5">
-                        <?php foreach ($candidate_info['political_journey']['organizational_roles'] as $role): ?>
-                            <li><?php echo htmlspecialchars($role['organization']); ?>:
-                                <?php echo htmlspecialchars($role['positions']); ?>
-                            </li>
-                        <?php endforeach; ?>
-                    </ul>
-                </div>
-            </article>
-
-            <!-- Vision and Priorities -->
-            <article
-                class="bg-white dark:bg-background-dark p-8 rounded-xl border border-gray-100 dark:border-gray-800">
-                <h2 class="text-3xl font-bold text-secondary mb-4">
-                    <?php echo htmlspecialchars($candidate_info['vision']['title']); ?>
-                </h2>
-                <p class="text-lg leading-relaxed mb-6">
-                    <?php echo htmlspecialchars($candidate_info['vision']['introduction']); ?>
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <?php foreach ($candidate_info['vision']['priorities'] as $priority): ?>
-                        <div class="flex items-start gap-4 p-4 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
-                            <span
-                                class="material-symbols-outlined text-primary text-3xl flex-shrink-0"><?php echo htmlspecialchars($priority['icon']); ?></span>
-                            <div>
-                                <h3 class="font-bold text-slate-800 dark:text-white mb-1">
-                                    <?php echo htmlspecialchars($priority['title']); ?>
-                                </h3>
-                                <p class="text-sm text-slate-600 dark:text-slate-300">
-                                    <?php echo htmlspecialchars($priority['description']); ?>
-                                </p>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-            </article>
-
-            <!-- Approach to Representation -->
-            <article
-                class="bg-white dark:bg-background-dark p-8 rounded-xl border border-gray-100 dark:border-gray-800">
-                <h2 class="text-3xl font-bold text-secondary mb-4">
-                    <?php echo htmlspecialchars($candidate_info['approach']['title']); ?>
-                </h2>
-                <div class="space-y-4">
-                    <?php foreach ($candidate_info['approach']['points'] as $point): ?>
-                        <div>
-                            <h3 class="font-bold text-slate-800 dark:text-white">
-                                <?php echo htmlspecialchars($point['heading']); ?>
-                            </h3>
-                            <p class="text-lg leading-relaxed"><?php echo htmlspecialchars($point['description']); ?></p>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-            </article>
-
-            <!-- Focus Areas -->
-            <article
-                class="bg-white dark:bg-background-dark p-8 rounded-xl border border-gray-100 dark:border-gray-800">
-                <h2 class="text-3xl font-bold text-secondary mb-4">Key Focus Areas</h2>
-                <ul class="list-disc pl-5 space-y-2">
-                    <?php foreach ($candidate_info['focus_areas'] as $area): ?>
-                        <li class="text-lg leading-relaxed"><?php echo htmlspecialchars($area); ?></li>
-                    <?php endforeach; ?>
-                </ul>
-            </article>
+// If no ID or candidate not found, show all candidates with Sujan Lama featured
+if (!$selected_candidate) {
+    ?>
+    <main class="max-w-7xl mx-auto p-4 md:p-8">
+        <!-- Page Header -->
+        <div class="mb-10">
+            <nav class="flex items-center gap-2 text-sm font-medium mb-4">
+                <a class="text-primary hover:underline" href="index.php">Home</a>
+                <span class="material-symbols-outlined text-xs text-slate-400">chevron_right</span>
+                <span class="text-slate-500">Candidates</span>
+            </nav>
+            <h1 class="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-3 tracking-tight">
+                Election Candidates <span class="text-primary">2026</span>
+            </h1>
+            <p class="text-lg text-slate-600 dark:text-slate-400 font-medium">
+                House of Representatives • Sunsari-2 Constituency • Koshi Province, Nepal
+            </p>
         </div>
 
-        <!-- Sidebar -->
-        <aside class="w-full lg:w-80 space-y-8">
-            <!-- Meet the Candidate Widget -->
-            <div
-                class="bg-white dark:bg-background-dark border border-gray-100 dark:border-gray-800 rounded-xl overflow-hidden shadow-lg">
-                <div class="p-1 bg-primary"></div>
-                <div class="p-6 text-center">
-                    <div class="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white shadow-md mb-4">
-                        <img class="w-full h-full object-cover"
-                            alt="Headshot of <?php echo htmlspecialchars($candidate_info['candidate']['name']); ?>, political candidate for Sunsari-2"
-                            itemprop="image"
-                            src="<?php echo htmlspecialchars($candidate_info['candidate']['image']); ?>" />
-                    </div>
-                    <h4 class="text-2xl font-black text-[#0e111b] dark:text-white leading-tight">
-                        <?php echo htmlspecialchars($candidate_info['candidate']['name']); ?>
-                    </h4>
-                    <p class="text-primary text-sm font-bold mb-4">Candidate for
-                        <?php echo htmlspecialchars($candidate_info['candidate']['constituency']); ?>
-                        (<?php echo htmlspecialchars($candidate_info['candidate']['affiliation']); ?>)
-                    </p>
-                    <div class="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-lg text-left mb-6">
-                        <p class="text-[#4e5e97] dark:text-gray-400 text-sm leading-relaxed italic">
-                            "<?php echo htmlspecialchars($candidate_info['candidate']['key_message']); ?>"
-                        </p>
-                    </div>
-                    <div class="flex flex-col">
-                        <a href="https://sujanlama.com" target="_blank" class="block">
-                            <button
-                                class="w-full py-3 bg-primary text-white rounded-t-lg font-bold shadow-md hover:bg-opacity-90 transition-all">
-                                Full Profile &amp; Bio
-                            </button>
-                        </a>
-                        <a href="https://forms.gle/cUi2Wy9VAPjMtcKH8" target="_blank" class="block">
-                            <button
-                                class="w-full py-3 bg-white dark:bg-transparent border-2 border-primary border-t-0 text-primary rounded-b-lg font-bold hover:bg-primary/5 transition-all">
-                                Ask For Help
-                            </button>
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <?php if (!empty($candidates_data['candidates'])): ?>
+            <?php
+            // Separate featured and other candidates
+            $featured_candidate = null;
+            $other_candidates = [];
+            
+            foreach ($candidates_data['candidates'] as $candidate) {
+                if ($candidate['featured'] ?? false) {
+                    $featured_candidate = $candidate;
+                } else {
+                    $other_candidates[] = $candidate;
+                }
+            }
+            ?>
 
-            <!-- Contact Widget -->
-            <div class="bg-primary rounded-xl p-6 text-white shadow-lg overflow-hidden relative">
-                <div class="absolute -right-4 -bottom-4 opacity-10">
-                    <span class="material-symbols-outlined text-9xl">campaign</span>
+            <!-- Featured Candidate - Sujan Lama -->
+            <?php if ($featured_candidate): ?>
+                <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 md:p-10 mb-12 shadow-sm">
+                    <div class="flex flex-col lg:flex-row gap-10 items-start">
+                        <!-- Candidate Photo -->
+                        <div class="w-full lg:w-[400px] flex-shrink-0">
+                            <div class="relative">
+                                <div class="aspect-[4/5] rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-700 border border-slate-200 dark:border-slate-600">
+                                    <img src="<?php echo htmlspecialchars($featured_candidate['image']); ?>" 
+                                         alt="<?php echo htmlspecialchars($featured_candidate['name']); ?>"
+                                         class="w-full h-full object-cover"
+                                         onerror="this.src='assets/images/news/sujan-lama.jpg'">
+                                </div>
+                                <div class="absolute top-4 left-4 bg-primary text-white px-4 py-2 rounded-lg font-bold text-xs uppercase tracking-widest flex items-center gap-2 shadow-sm">
+                                    <span class="material-symbols-outlined text-sm">star</span>
+                                    Featured Candidate
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Candidate Info -->
+                        <div class="flex-1 space-y-6">
+                            <div>
+                                <h2 class="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-4 leading-tight">
+                                    <?php echo htmlspecialchars($featured_candidate['name']); ?>
+                                </h2>
+                                <div class="flex flex-wrap items-center gap-3">
+                                    <span class="bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 px-4 py-1.5 rounded-full text-sm font-bold border border-red-100 dark:border-red-900/30">
+                                        <?php echo htmlspecialchars($featured_candidate['party']); ?>
+                                    </span>
+                                    <span class="bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 px-4 py-1.5 rounded-full text-sm font-bold border border-blue-100 dark:border-blue-900/30">
+                                        <?php echo htmlspecialchars($featured_candidate['position']); ?>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <p class="text-xl italic text-slate-500 font-medium leading-relaxed border-l-4 border-primary pl-6 py-2">
+                                "<?php echo htmlspecialchars($featured_candidate['slogan']); ?>"
+                            </p>
+                            
+                            <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
+                                <?php echo htmlspecialchars($featured_candidate['description']); ?>
+                            </p>
+                            
+                            <!-- Stats Grid -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 py-4 border-y border-slate-100 dark:border-slate-700">
+                                <div>
+                                    <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2 flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-sm text-primary">school</span>
+                                        Education
+                                    </h4>
+                                    <p class="font-bold text-slate-800 dark:text-white">
+                                        <?php echo htmlspecialchars($featured_candidate['education']); ?>
+                                    </p>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2 flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-sm text-primary">work</span>
+                                        Experience
+                                    </h4>
+                                    <p class="font-bold text-slate-800 dark:text-white">
+                                        <?php echo htmlspecialchars($featured_candidate['experience']); ?>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <!-- Focus Areas -->
+                            <div>
+                                <h3 class="font-bold text-slate-800 dark:text-white mb-4 text-sm uppercase tracking-widest flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-primary">ads_click</span>
+                                    Key Focus Areas
+                                </h3>
+                                <div class="flex flex-wrap gap-2">
+                                    <?php foreach ($featured_candidate['focus_areas'] as $area): ?>
+                                        <span class="bg-slate-50 dark:bg-slate-900 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm font-bold">
+                                            <?php echo htmlspecialchars($area); ?>
+                                        </span>
+                                    <?php endforeach; ?>
+                                </div>
+                            </div>
+                            
+                            <!-- Action Buttons -->
+                            <div class="flex flex-wrap gap-4 pt-4">
+                                <?php if (!empty($featured_candidate['contact']['website'])): ?>
+                                    <a href="<?php echo htmlspecialchars($featured_candidate['contact']['website']); ?>" 
+                                       target="_blank"
+                                       class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold flex items-center gap-2 shadow-sm">
+                                        <span class="material-symbols-outlined">language</span>
+                                        Visit Website
+                                    </a>
+                                <?php endif; ?>
+                                <a href="blogs/index.php?search=<?php echo urlencode($featured_candidate['name']); ?>" 
+                                   class="bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 px-8 py-4 rounded-xl font-bold flex items-center gap-2 shadow-sm">
+                                    <span class="material-symbols-outlined text-primary">article</span>
+                                    Read Updates
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <h5 class="text-lg font-bold mb-2">
-                    <?php echo htmlspecialchars($candidate_info['contact']['heading']); ?>
-                </h5>
-                <p class="text-xs text-white/80 mb-4">
-                    <?php echo htmlspecialchars($candidate_info['contact']['message']); ?>
-                </p>
-                <a href="<?php echo htmlspecialchars($candidate_info['contact']['button_link']); ?>"
-                    target="<?php echo htmlspecialchars($candidate_info['contact']['button_target']); ?>"
-                    class="w-full bg-accent-crimson text-white font-bold py-2 rounded-lg text-sm shadow-md inline-block text-center">
-                    <?php echo htmlspecialchars($candidate_info['contact']['button_text']); ?>
-                </a>
+            <?php endif; ?>
+
+            <!-- Other Candidates -->
+            <?php if (!empty($other_candidates)): ?>
+                <div class="space-y-6">
+                    <h2 class="text-2xl font-black text-slate-800 dark:text-white uppercase tracking-widest flex items-center gap-3">
+                        <span class="h-1 w-12 bg-primary"></span>
+                        Other Candidates
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <?php foreach ($other_candidates as $candidate): ?>
+                            <div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 p-5 shadow-sm">
+                                <div class="flex gap-6 items-center">
+                                    <div class="w-32 h-32 rounded-lg overflow-hidden bg-slate-100 dark:bg-slate-700 flex-shrink-0 border border-slate-200 dark:border-slate-600">
+                                        <img src="<?php echo htmlspecialchars($candidate['image']); ?>" 
+                                             alt="<?php echo htmlspecialchars($candidate['name']); ?>"
+                                             class="w-full h-full object-cover"
+                                             onerror="this.src='assets/images/news/sujan-lama.jpg'">
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <h3 class="text-xl font-black text-slate-900 dark:text-white mb-1 truncate">
+                                            <?php echo htmlspecialchars($candidate['name']); ?>
+                                        </h3>
+                                        <p class="text-primary font-bold text-sm mb-3">
+                                            <?php echo htmlspecialchars($candidate['party']); ?>
+                                        </p>
+                                        <p class="text-xs text-slate-500 dark:text-slate-400 font-medium line-clamp-2 mb-4">
+                                            <?php echo htmlspecialchars($candidate['description']); ?>
+                                        </p>
+                                        <div class="flex flex-wrap gap-2">
+                                            <?php foreach (array_slice($candidate['focus_areas'], 0, 2) as $area): ?>
+                                                <span class="text-[10px] uppercase tracking-wider bg-slate-50 dark:bg-slate-900 px-2 py-1 rounded border border-slate-200 dark:border-slate-700 text-slate-500 font-bold">
+                                                    <?php echo htmlspecialchars($area); ?>
+                                                </span>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            <?php endif; ?>
+
+        <?php else: ?>
+            <div class="text-center py-20 bg-white dark:bg-slate-800 rounded-2xl border border-slate-100">
+                <span class="material-symbols-outlined text-slate-200 text-8xl mb-4 block">person_off</span>
+                <p class="text-slate-400 text-lg font-bold">No candidate profiles currently available.</p>
             </div>
-        </aside>
-    </div>
-</main>
+        <?php endif; ?>
+    </main>
+    <?php
+} else {
+    // Show individual candidate detail (can be implemented if needed)
+    header("Location: candidate.php");
+    exit();
+}
+?>
 
 <?php require_once 'includes/footer.php'; ?>

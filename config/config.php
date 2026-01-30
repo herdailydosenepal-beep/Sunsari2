@@ -166,6 +166,22 @@ if (file_exists($blog_json_file)) {
     $blog_data = json_decode($blog_json_content, true);
 }
 
+// Load index data (landmarks, key issues) from JSON file
+$index_data = [];
+$index_json_file = __DIR__ . '/../data/index_data.json';
+if (file_exists($index_json_file)) {
+    $index_json_content = file_get_contents($index_json_file);
+    $index_data = json_decode($index_json_content, true);
+}
+
+// Load candidates data from JSON file
+$candidates_data = [];
+$candidates_json_file = __DIR__ . '/../data/candidates_data.json';
+if (file_exists($candidates_json_file)) {
+    $candidates_json_content = file_get_contents($candidates_json_file);
+    $candidates_data = json_decode($candidates_json_content, true);
+}
+
 // -----------------------------------------------------------------------------
 // 6. MULTILINGUAL SUPPORT (I18N)
 // -----------------------------------------------------------------------------
@@ -239,6 +255,28 @@ function generate_breadcrumbs($current_page_title, $custom_trail = [])
 function get_current_page()
 {
     return basename($_SERVER['PHP_SELF'], '.php');
+}
+
+/**
+ * Calculates estimated reading time for content.
+ * Assumes average reading speed of 200 words per minute.
+ *
+ * @param string $content The HTML content to analyze.
+ * @return int Estimated reading time in minutes (minimum 1).
+ */
+function calculate_reading_time($content)
+{
+    // Strip HTML tags and get plain text
+    $text = strip_tags($content);
+    
+    // Count words (split by whitespace)
+    $word_count = str_word_count($text);
+    
+    // Calculate reading time (200 words per minute average)
+    $minutes = ceil($word_count / 200);
+    
+    // Minimum 1 minute
+    return max(1, $minutes);
 }
 
 // Global variable to hold the current page's configuration

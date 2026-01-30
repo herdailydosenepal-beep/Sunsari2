@@ -166,33 +166,6 @@ if (file_exists($blog_json_file)) {
     $blog_data = json_decode($blog_json_content, true);
 }
 
-// Load index data from JSON file
-$index_data = [];
-$index_json_file = __DIR__ . '/../data/index_data.json';
-if (file_exists($index_json_file)) {
-    $index_json_content = file_get_contents($index_json_file);
-    $index_data = json_decode($index_json_content, true);
-}
-
-// Load candidate data from JSON file
-$candidate_info = [];
-$candidate_json_file = __DIR__ . '/../data/candidate_data.json';
-if (file_exists($candidate_json_file)) {
-    $candidate_json_content = file_get_contents($candidate_json_file);
-    $candidate_info = json_decode($candidate_json_content, true);
-
-    // Update global candidate variables from JSON data
-    if (isset($candidate_info['candidate']['name'])) {
-        $candidate_name = $candidate_info['candidate']['name'];
-    }
-    if (isset($candidate_info['candidate']['affiliation'])) {
-        $political_party = $candidate_info['candidate']['affiliation'];
-    }
-    // Assume campaign office address might be part of candidate_info if detailed
-    // For now, keep as a placeholder or use a default if not in JSON
-    // $campaign_office_address = $candidate_info['contact']['address'] ?? "123 Main Street, Inaruwa, Sunsari";
-}
-
 // -----------------------------------------------------------------------------
 // 6. MULTILINGUAL SUPPORT (I18N)
 // -----------------------------------------------------------------------------

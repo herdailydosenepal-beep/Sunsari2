@@ -1,0 +1,106 @@
+{
+    "header_stats": {
+        "total_population": "254,000",
+        "total_area": "312",
+        "total_area_unit": "km²",
+        "literacy_rate": "72.5%",
+        "local_units_count": "5 Units"
+    },
+    "demographics": [
+        {
+            "name": "Itahari",
+            "wards": "6-10",
+            "male_population": "48,200",
+            "female_population": "51,300",
+            "literacy_rate": "88.5%",
+            "area": "22.4",
+            "area_unit": "sq km",
+            "main_groups": "Brahmin, Chhetri, Tharu"
+        },
+        {
+            "name": "Inaruwa",
+            "male_population": "32,100",
+            "female_population": "31,400",
+            "literacy_rate": "71.2%",
+            "area": "44.1",
+            "area_unit": "sq km",
+            "main_groups": "Yadav, Tharu, Muslim"
+        },
+        {
+            "name": "Ramdhuni",
+            "male_population": "26,400",
+            "female_population": "27,200",
+            "literacy_rate": "76.8%",
+            "area": "48.2",
+            "area_unit": "sq km",
+            "main_groups": "Tharu, Musahar, Brahmin"
+        },
+        {
+            "name": "Harinagara",
+            "male_population": "21,200",
+            "female_population": "19,600",
+            "literacy_rate": "58.4%",
+            "area": "52.3",
+            "area_unit": "sq km",
+            "main_groups": "Muslim, Yadav, Sahani"
+        },
+        {
+            "name": "Dewangunj",
+            "male_population": "18,900",
+            "female_population": "17,200",
+            "literacy_rate": "55.2%",
+            "area": "44.4",
+            "area_unit": "sq km",
+            "main_groups": "Yadav, Muslim, Mehta"
+        }
+    ],
+    "landmarks": [
+        {
+            "name": "Satyanarayan Mandir",
+            "location": "Central Inaruwa",
+            "type": "Heritage Site",
+            "icon": "temple_hindu"
+        },
+        {
+            "name": "Jama Masjid",
+            "location": "Inaruwa-4",
+            "type": "Major Mosque",
+            "icon": "mosque"
+        },
+        {
+            "name": "Shanti Park",
+            "location": "Inaruwa-1",
+            "type": "Public Recreation",
+            "icon": "park"
+        },
+        {
+            "name": "Inaruwa Church",
+            "location": "Inaruwa-3",
+            "type": "Community Center",
+            "icon": "church"
+        }
+    ],
+    "key_issues": [
+        {
+            "title": "Irrigation Access",
+            "description": "Farmers in Dewangunj reported 40% lack of reliable year-round water supply.",
+            "icon": "water_drop",
+            "icon_bg_color": "bg-amber-100",
+            "icon_text_color": "text-amber-700"
+        },
+        {
+            "title": "Electrification Gaps",
+            "description": "Wards 4 & 5 of Harinagara need transformer upgrades for agro-industry.",
+            "icon": "electric_bolt",
+            "icon_bg_color": "bg-red-100",
+            "icon_text_color": "text-red-700"
+        },
+        {
+            "title": "Seed & Fertilizer Supply",
+            "description": "Logistical delays reported during the wheat sowing season.",
+            "icon": "agriculture",
+            "icon_bg_color": "bg-blue-100",
+            "icon_text_color": "text-blue-700"
+        }
+    ]
+}

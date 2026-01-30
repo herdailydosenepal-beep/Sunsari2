@@ -1,0 +1,518 @@
+# Sunsari-2 Political Website: Static HTML to SEO-Optimized PHP Conversion Prompt
+
+## Project Overview
+Convert existing static HTML website (index.html, candidate.html, blogs.html) to SEO-optimized PHP while maintaining exact design and layout. Target: Political constituency website for Sunsari-2, Koshi Province, Nepal.
+
+## Current Structure
+```
+/sunsari 2/
+├── index.html (28,326 bytes)
+├── candidate.html (26,976 bytes)
+├── blogs.html (21,688 bytes)
+├── /google-official-seo-guide/
+├── /seo-aeo-best-practices/
+├── /seo-audit/
+└── /seo-geo/
+```
+
+## Core Requirements for Google Gemini CLI 2.5 Pro
+
+### 1. CRITICAL CONSTRAINT
+**DO NOT CHANGE ANY DESIGN ELEMENTS**
+- Preserve ALL CSS styles, classes, IDs
+- Maintain exact HTML structure and layout
+- Keep all colors (crimson #DC143C, blue #1E40AF, white #FFFFFF)
+- Preserve all JavaScript functionality
+- Only modify content and add SEO enhancements
+
+### 2. PHP Conversion Goals
+
+#### A. Dynamic Content Management
+Convert static content to PHP variables/arrays for:
+- Meta tags (title, description, keywords)
+- Heading tags (H1, H2, H3) 
+- Content blocks
+- Structured data markup
+- Open Graph tags
+- Twitter Card tags
+
+#### B. SEO-Focused Content Optimization
+
+**Primary Keywords to Target:**
+- Sunsari-2 constituency
+- Sunsari-2 election [YEAR]
+- [Candidate Name] Sunsari-2
+- Koshi Province election
+- Dewangunj Rural Municipality politics
+- Harinagara ward 3 election
+- Ramdhuni Municipality wards 1,2,3,5,8,9
+- Inaruwa Municipality election
+- Itahari Sub-Metropolitan wards election
+- Nepal local election Sunsari
+- Sunsari district politics
+- Terai political constituency
+
+**Long-tail Keywords:**
+- "who is the candidate for Sunsari-2"
+- "Sunsari-2 constituency boundary"
+- "election results Sunsari-2 Nepal"
+- "Dewangunj rural municipality election"
+- "Inaruwa municipality political candidate"
+- "Itahari wards 1-5 16-20 representative"
+
+**LSI (Latent Semantic Indexing) Keywords:**
+- Rural municipality, sub-metropolitan city, local unit
+- Ward-level representation, constituency demographics
+- Koshi Province, Sunsari District, Terai region
+- Political campaign, voter turnout, election strategy
+- Agriculture support, infrastructure development, youth employment
+- Ethnic communities: Kushwaha, Koiri, Yadav, Tharu, Muslim
+- Local governance, development priorities
+
+### 3. Technical SEO Implementation
+
+#### A. PHP Header Configuration
+```php
+<?php
+// SEO Configuration
+$page_config = [
+    'index' => [
+        'title' => 'Sunsari-2 Constituency | Koshi Province Nepal Election Data',
+        'meta_description' => 'Complete constituency data for Sunsari-2: Dewangunj, Harinagara, Ramdhuni, Inaruwa, Itahari. Demographics, wards, political strategy, and election information.',
+        'meta_keywords' => 'Sunsari-2, Koshi Province, Nepal election, constituency data, Dewangunj, Harinagara, Inaruwa, Ramdhuni, Itahari',
+        'canonical' => 'https://yourdomain.com/',
+        'og_type' => 'website'
+    ],
+    'candidate' => [
+        'title' => '[Candidate Name] - Sunsari-2 Candidate Profile & Political Vision',
+        'meta_description' => 'Meet [Candidate Name], candidate for Sunsari-2 constituency. Learn about political vision, development priorities, and commitments to Dewangunj, Harinagara, Ramdhuni, Inaruwa, and Itahari.',
+        'meta_keywords' => '[Candidate Name], Sunsari-2 candidate, Nepal election, political profile, campaign promises',
+        'canonical' => 'https://yourdomain.com/candidate',
+        'og_type' => 'profile'
+    ],
+    'blogs' => [
+        'title' => 'Sunsari-2 News & Political Updates | Campaign Blog',
+        'meta_description' => 'Latest news, updates, and political analysis from Sunsari-2 constituency. Campaign activities, local issues, development projects, and community engagement.',
+        'meta_keywords' => 'Sunsari-2 news, political blog, campaign updates, local issues, Nepal politics',
+        'canonical' => 'https://yourdomain.com/blogs',
+        'og_type' => 'blog'
+    ]
+];
+?>
+```
+
+#### B. Structured Data (Schema.org JSON-LD)
+
+**For index.php:**
+```php
+<?php
+$schema_place = [
+    "@context" => "https://schema.org",
+    "@type" => "AdministrativeArea",
+    "name" => "Sunsari-2 Electoral Constituency",
+    "containedInPlace" => [
+        "@type" => "AdministrativeArea",
+        "name" => "Koshi Province",
+        "containedInPlace" => [
+            "@type" => "Country",
+            "name" => "Nepal"
+        ]
+    ],
+    "containsPlace" => [
+        ["@type" => "City", "name" => "Dewangunj Rural Municipality"],
+        ["@type" => "City", "name" => "Harinagara Rural Municipality"],
+        ["@type" => "City", "name" => "Ramdhuni Municipality"],
+        ["@type" => "City", "name" => "Inaruwa Municipality"],
+        ["@type" => "City", "name" => "Itahari Sub-Metropolitan City"]
+    ]
+];
+?>
+```
+
+**For candidate.php:**
+```php
+<?php
+$schema_person = [
+    "@context" => "https://schema.org",
+    "@type" => "Person",
+    "name" => "[Candidate Name]",
+    "jobTitle" => "Political Candidate",
+    "affiliation" => [
+        "@type" => "Organization",
+        "name" => "[Political Party]"
+    ],
+    "knowsAbout" => ["Politics", "Governance", "Rural Development", "Agriculture Policy"],
+    "workLocation" => [
+        "@type" => "Place",
+        "name" => "Sunsari-2 Constituency, Koshi Province, Nepal"
+    ]
+];
+?>
+```
+
+#### C. Semantic HTML5 Enhancements
+```php
+<!-- Ensure proper semantic structure -->
+<article itemscope itemtype="https://schema.org/Article">
+    <header>
+        <h1 itemprop="headline">Sunsari-2 Constituency Data</h1>
+        <meta itemprop="datePublished" content="<?php echo date('Y-m-d'); ?>">
+    </header>
+    
+    <section itemprop="articleBody">
+        <!-- Content here -->
+    </section>
+</article>
+```
+
+### 4. Content Optimization Strategy
+
+#### A. Heading Hierarchy Optimization
+- **H1**: One per page, keyword-rich, unique
+  - Index: "Sunsari-2 Electoral Constituency | Complete Data & Demographics"
+  - Candidate: "[Candidate Name] for Sunsari-2 | Political Vision & Commitments"
+  - Blogs: "Sunsari-2 Political Updates & Campaign News"
+
+- **H2**: Section headers with LSI keywords
+  - "Constituency Boundary and Ward Coverage"
+  - "Demographic Profile of Sunsari-2 Local Units"
+  - "Key Political Issues by Municipality"
+  - "Electoral Strategy for Rural and Urban Areas"
+
+- **H3**: Subsections with long-tail keywords
+  - "Dewangunj Rural Municipality: All Wards 1-10"
+  - "Harinagara Ward 3 Demographics and Priorities"
+  - "Inaruwa Municipality: District Headquarters Profile"
+
+#### B. Content Density Requirements
+- **Keyword density**: 1.5-2.5% for primary keywords
+- **Word count minimum**:
+  - Homepage: 1,500-2,000 words
+  - Candidate page: 1,200-1,800 words
+  - Blog posts: 800-1,500 words each
+
+#### C. Political Content Guidelines
+- Include verifiable demographic data (2021 census)
+- Reference specific ward numbers and local units
+- Mention ethnic communities by name (for local search)
+- Include infrastructure and development priorities
+- Use location-based keywords naturally
+- Add voter information and civic engagement content
+
+### 5. Local SEO (Geo-Targeting)
+
+#### A. Geographic Signals
+```php
+<?php
+$geo_tags = [
+    'geo.region' => 'NP-P1',  // Koshi Province
+    'geo.placename' => 'Sunsari District',
+    'geo.position' => '26.6544;87.2718',  // Approximate coordinates
+    'ICBM' => '26.6544, 87.2718'
+];
+?>
+```
+
+#### B. Local Business Schema (if applicable)
+```php
+<?php
+$campaign_office = [
+    "@context" => "https://schema.org",
+    "@type" => "LocalBusiness",
+    "name" => "[Candidate Name] Campaign Office",
+    "address" => [
+        "@type" => "PostalAddress",
+        "streetAddress" => "[Office Address]",
+        "addressLocality" => "Inaruwa/Itahari",
+        "addressRegion" => "Koshi Province",
+        "addressCountry" => "NP"
+    ],
+    "geo" => [
+        "@type" => "GeoCoordinates",
+        "latitude" => "26.6544",
+        "longitude" => "87.2718"
+    ]
+];
+?>
+```
+
+### 6. URL Structure & Permalinks
+
+#### A. Clean URLs with mod_rewrite
+```php
+// .htaccess configuration
+RewriteEngine On
+RewriteBase /
+
+# Remove .php extension
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L]
+
+# SEO-friendly URLs
+RewriteRule ^constituency/?$ index.php [L]
+RewriteRule ^candidate/([a-z-]+)/?$ candidate.php?slug=$1 [L]
+RewriteRule ^blog/([a-z0-9-]+)/?$ blogs.php?post=$1 [L]
+```
+
+#### B. Breadcrumb Navigation
+```php
+<?php
+function generate_breadcrumbs($current_page) {
+    $breadcrumbs = [
+        'Home' => '/',
+        'Constituency Data' => '/constituency',
+        'Candidate Profile' => '/candidate',
+        'News & Updates' => '/blogs'
+    ];
+    
+    // Schema.org BreadcrumbList
+    $schema = [
+        "@context" => "https://schema.org",
+        "@type" => "BreadcrumbList",
+        "itemListElement" => []
+    ];
+    
+    $position = 1;
+    foreach ($breadcrumbs as $name => $url) {
+        $schema['itemListElement'][] = [
+            "@type" => "ListItem",
+            "position" => $position++,
+            "name" => $name,
+            "item" => "https://yourdomain.com" . $url
+        ];
+        if ($name === $current_page) break;
+    }
+    
+    return json_encode($schema);
+}
+?>
+```
+
+### 7. Performance Optimization
+
+#### A. PHP Caching
+```php
+<?php
+// Output buffering and compression
+ob_start('ob_gzhandler');
+
+// Cache static content
+header('Cache-Control: public, max-age=86400');
+header('Expires: ' . gmdate('D, d M Y H:i:s', time() + 86400) . ' GMT');
+?>
+```
+
+#### B. Image Optimization Tags
+```php
+<img src="image.jpg" 
+     alt="Sunsari-2 constituency map showing Dewangunj, Harinagara, Ramdhuni, Inaruwa, Itahari" 
+     loading="lazy" 
+     width="800" 
+     height="600"
+     itemprop="image">
+```
+
+### 8. Content Crawlability
+
+#### A. XML Sitemap Generation
+```php
+<?php
+// sitemap.php
+header('Content-Type: application/xml; charset=utf-8');
+echo '<?xml version="1.0" encoding="UTF-8"?>';
+?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://yourdomain.com/</loc>
+        <lastmod><?php echo date('Y-m-d'); ?></lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://yourdomain.com/candidate</loc>
+        <lastmod><?php echo date('Y-m-d'); ?></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://yourdomain.com/blogs</loc>
+        <lastmod><?php echo date('Y-m-d'); ?></lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+</urlset>
+```
+
+#### B. Robots.txt Optimization
+```
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+Sitemap: https://yourdomain.com/sitemap.xml
+```
+
+### 9. Political SEO Specifics
+
+#### A. Election-Related Content
+- Add "Election [YEAR]" dynamically to titles
+- Include voting date information (if available)
+- Reference Nepal Election Commission
+- Link to voter registration resources
+- Add constituency office contact information
+
+#### B. Trust Signals
+```php
+<footer>
+    <div itemscope itemtype="https://schema.org/GovernmentOrganization">
+        <meta itemprop="name" content="[Candidate Name] for Sunsari-2">
+        <meta itemprop="legalName" content="[Official Campaign Name]">
+        <p>Authorized by: <span itemprop="founder">[Candidate Name]</span></p>
+        <p itemprop="address">Campaign Office: [Address]</p>
+    </div>
+</footer>
+```
+
+### 10. Multilingual SEO (Nepali + English)
+
+#### A. Hreflang Tags
+```php
+<link rel="alternate" hreflang="en" href="https://yourdomain.com/en/" />
+<link rel="alternate" hreflang="ne" href="https://yourdomain.com/ne/" />
+<link rel="alternate" hreflang="x-default" href="https://yourdomain.com/" />
+```
+
+#### B. Content Translation Variables
+```php
+<?php
+$lang = isset($_GET['lang']) ? $_GET['lang'] : 'ne';
+
+$translations = [
+    'ne' => [
+        'constituency' => 'सुनसरी-२ निर्वाचन क्षेत्र',
+        'candidate' => 'उम्मेदवार',
+        'demographics' => 'जनसांख्यिकी',
+        'wards' => 'वडाहरू'
+    ],
+    'en' => [
+        'constituency' => 'Sunsari-2 Constituency',
+        'candidate' => 'Candidate',
+        'demographics' => 'Demographics',
+        'wards' => 'Wards'
+    ]
+];
+?>
+```
+
+### 11. Analytics & Tracking Integration
+
+```php
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX', {
+    'custom_map': {
+      'dimension1': 'constituency_area',
+      'dimension2': 'ward_number'
+    }
+  });
+  
+  // Track constituency-specific events
+  gtag('event', 'page_view', {
+    'constituency_area': '<?php echo $current_area; ?>',
+    'ward_number': '<?php echo $current_ward; ?>'
+  });
+</script>
+```
+
+## Implementation Checklist for Gemini CLI
+
+When using Google Gemini CLI 2.5 Pro with skill.sh:
+
+### Phase 1: Analysis
+- [ ] Read existing HTML files (index.html, candidate.html, blogs.html)
+- [ ] Extract current content structure
+- [ ] Identify all CSS classes and IDs (DO NOT MODIFY)
+- [ ] Map content sections to PHP variables
+
+### Phase 2: SEO Reference Integration
+- [ ] Load and analyze /google-official-seo-guide/
+- [ ] Apply recommendations from /seo-aeo-best-practices/
+- [ ] Implement fixes from /seo-audit/
+- [ ] Integrate /seo-geo/ for local optimization
+
+### Phase 3: PHP Conversion
+- [ ] Create config.php with all SEO variables
+- [ ] Convert HTML to PHP with preserved design
+- [ ] Add structured data (JSON-LD)
+- [ ] Implement meta tag system
+- [ ] Add breadcrumb navigation
+- [ ] Create XML sitemap generator
+
+### Phase 4: Content Optimization
+- [ ] Optimize H1, H2, H3 tags with keywords
+- [ ] Enhance alt text for images
+- [ ] Add internal linking structure
+- [ ] Implement schema markup
+- [ ] Add Open Graph and Twitter Cards
+
+### Phase 5: Political Content Enhancement
+- [ ] Insert constituency-specific keywords naturally
+- [ ] Add demographic data with semantic markup
+- [ ] Include ward-level information
+- [ ] Reference local issues and priorities
+- [ ] Add voter resource links
+
+### Phase 6: Technical SEO
+- [ ] Configure .htaccess for clean URLs
+- [ ] Add caching headers
+- [ ] Implement lazy loading
+- [ ] Create robots.txt
+- [ ] Generate sitemap.xml
+
+### Phase 7: Validation
+- [ ] Verify design remains unchanged
+- [ ] Test all PHP functionality
+- [ ] Validate schema markup
+- [ ] Check mobile responsiveness
+- [ ] Test page load speed
+- [ ] Verify meta tags render correctly
+
+## Gemini CLI Command Template
+
+```bash
+# skill.sh command structure
+skill.sh --model gemini-2.5-pro \
+  --input "index.html,candidate.html,blogs.html" \
+  --reference "google-official-seo-guide/,seo-aeo-best-practices/,seo-audit/,seo-geo/" \
+  --task "Convert to SEO-optimized PHP maintaining exact design" \
+  --constraints "preserve_all_css_and_design,political_content_focus,sunsari2_keywords" \
+  --output "index.php,candidate.php,blogs.php,config.php,sitemap.php"
+```
+
+## Key Success Metrics
+
+1. **Zero design changes** - All visual elements preserved
+2. **Keyword integration** - Natural inclusion without stuffing
+3. **Schema validation** - All structured data validates
+4. **Page speed** - No performance degradation
+5. **Crawlability** - 100% indexable content
+6. **Local SEO** - Geo-targeting properly configured
+7. **Political relevance** - Content accurately reflects constituency data
+
+## Final Notes
+
+- Reference the uploaded Sunsari-2 PDF data for accurate constituency information
+- Maintain factual accuracy for all demographic and geographic data
+- Use Nepal-specific schema where applicable
+- Optimize for both Nepali and English search queries
+- Follow Nepal Election Commission guidelines for political advertising
+- Ensure mobile-first indexing compliance
+- Test with Google Search Console after deployment
+
+**Priority**: SEO optimization at 100% while preserving design at 100%

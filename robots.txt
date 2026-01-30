@@ -1,0 +1,15 @@
+# robots.txt for Sunsari-2 Political Website
+
+User-agent: *
+# Allow all crawlers to access all content by default.
+Allow: /
+
+# Disallow access to any potential admin, private, or include folders.
+Disallow: /admin/
+Disallow: /private/
+Disallow: /includes/
+Disallow: /config.php
+
+# Specify the location of the XML sitemap.
+# Make sure to replace yourdomain.com with the actual domain name.
+Sitemap: https://yourdomain.com/sitemap.php

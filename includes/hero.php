@@ -31,11 +31,11 @@
                     <div class="text-[10px] md:text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Municipalities</div>
                 </div>
                 <div class="text-center sm:text-left border-l border-slate-200 dark:border-slate-800 sm:pl-4">
-                    <div class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-0.5">39</div>
+                    <div class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-0.5">30</div>
                     <div class="text-[10px] md:text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Wards</div>
                 </div>
                 <div class="text-center sm:text-left border-l-0 sm:border-l border-slate-200 dark:border-slate-800 sm:pl-4">
-                    <div class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-0.5">200K+</div>
+                    <div class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-0.5">206K+</div>
                     <div class="text-[10px] md:text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Population</div>
                 </div>
                 <div class="text-center sm:text-left border-l border-slate-200 dark:border-slate-800 sm:pl-4">

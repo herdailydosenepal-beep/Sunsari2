@@ -95,15 +95,7 @@ if (!$selected_candidate) {
                             
                             <!-- Stats Grid -->
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 py-4 border-y border-slate-100 dark:border-slate-700">
-                                <div>
-                                    <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2 flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-sm text-primary">school</span>
-                                        Education
-                                    </h4>
-                                    <p class="font-bold text-slate-800 dark:text-white">
-                                        <?php echo htmlspecialchars($featured_candidate['education']); ?>
-                                    </p>
-                                </div>
+                                
                                 <div>
                                     <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2 flex items-center gap-2">
                                         <span class="material-symbols-outlined text-sm text-primary">work</span>
@@ -130,22 +122,7 @@ if (!$selected_candidate) {
                                 </div>
                             </div>
                             
-                            <!-- Action Buttons -->
-                            <div class="flex flex-wrap gap-4 pt-4">
-                                <?php if (!empty($featured_candidate['contact']['website'])): ?>
-                                    <a href="<?php echo htmlspecialchars($featured_candidate['contact']['website']); ?>" 
-                                       target="_blank"
-                                       class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold flex items-center gap-2">
-                                        <span class="material-symbols-outlined">language</span>
-                                        Visit Website
-                                    </a>
-                                <?php endif; ?>
-                                <a href="../blogs/index.php?search=<?php echo urlencode($featured_candidate['name']); ?>" 
-                                   class="bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 px-8 py-4 rounded-xl font-bold flex items-center gap-2">
-                                    <span class="material-symbols-outlined text-primary">article</span>
-                                    Read Updates
-                                </a>
-                            </div>
+                  
                         </div>
                     </div>
                 </div>

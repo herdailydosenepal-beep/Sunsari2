@@ -155,7 +155,7 @@ $t = $translations[$lang];
             <nav class="flex gap-4">
                 <a href="/" class="text-white/80 hover:text-white font-bold">Home</a>
                 <a href="/candidate" class="text-white/80 hover:text-white font-bold">Candidate</a>
-                <a href="/blogs" class="text-white/80 hover:text-white font-bold">Blog</a>
+                <a href="/blog.php" class="text-white/80 hover:text-white font-bold">Blog</a>
             </nav>
         </div>
     </header>

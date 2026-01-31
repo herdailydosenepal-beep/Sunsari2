@@ -280,9 +280,26 @@ $person_schema = [
     <link rel="preconnect" href="https://cdn.tailwindcss.com">
 </head>
 <body class="bg-gray-50">
-    
+    <!-- Header -->
+     <!-- Universal Header Section -->
+    <header class="bg-primary text-white py-6 px-4 md:px-12 shadow-lg">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <a href="/" class="flex items-center gap-4 group">
+                <div class=" p-2 rounded-lg shadow-sm">
+                    <img src="/assets/images/logo.png" alt="Sunsari-2 Logo" class="h-14 w-auto object-contain">
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold leading-tight">Sunsari-2 Constituency</h1>
+                    <p class="text-white/80 text-sm">Koshi Province, Nepal • Data Management System</p>
+                </div>
+            </a>
+            <nav class="flex gap-4">
+                <a href="/" class="text-white/80 hover:text-white font-bold">Home</a>
+                <a href="/candidate" class="text-white/80 hover:text-white font-bold">Candidate</a>
+                <a href="/blogs" class="text-white/80 hover:text-white font-bold">Blog</a>
+            </nav>
+        </div>
     </header>
-    
     <!-- Breadcrumbs -->
     <div class="bg-white border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 py-3">

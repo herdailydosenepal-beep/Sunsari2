@@ -118,14 +118,7 @@
                 <article class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
                     <?php if (!empty($post['image_url'])): ?>
                         <div class="h-48 overflow-hidden">
-                            <?php
-                            // Ensure image path is absolute (starts with /)
-                            $image_path = $post['image_url'];
-                            if (strpos($image_path, '/') !== 0 && strpos($image_path, 'http') !== 0) {
-                                $image_path = '/' . $image_path;
-                            }
-                            ?>
-                            <img src="<?php echo htmlspecialchars($image_path); ?>" 
+                            <img src="<?php echo htmlspecialchars($post['image_url']); ?>" 
                                  alt="<?php echo htmlspecialchars($post['alt_text'] ?? ''); ?>"
                                  class="w-full h-full object-cover">
                         </div>
@@ -167,13 +160,8 @@
                             $filename = preg_replace('/[^a-z0-9]+/', '-', $filename);
                             $filename = trim($filename, '-');
                             $filename = substr($filename, 0, 50);
-                            
-                            // Determine if we're in root or subdirectory
-                            $blog_link = (strpos($_SERVER['REQUEST_URI'], '/blogs') !== false) 
-                                ? "sunsari/{$filename}.php" 
-                                : "blogs/sunsari/{$filename}.php";
                             ?>
-                            <a href="<?php echo $blog_link; ?>" 
+                            <a href="blogs/sunsari/<?php echo $filename; ?>.php" 
                                class="text-primary hover:text-primary/80 font-bold text-sm">
                                 Read More →
                             </a>

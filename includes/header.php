@@ -25,7 +25,7 @@ if ($current_page_key === 'blogs' && isset($_GET['id'])) {
     if ($found_post) {
         $page_meta['title'] = $found_post['title'] . ' | Sunsari-2 Blog';
         $page_meta['meta_description'] = $found_post['summary'];
-        $page_meta['canonical'] = 'https://yourdomain.com/blogs.php?id=' . $post_id;
+        $page_meta['canonical'] = 'https://sunsari2.com/blogs?id=' . $post_id;
         $page_meta['og_type'] = 'article';
     }
 }
@@ -52,13 +52,13 @@ $t = $translations[$lang];
     <meta property="og:title" content="<?php echo htmlspecialchars($page_meta['title']); ?>" />
     <meta property="og:description" content="<?php echo htmlspecialchars($page_meta['meta_description']); ?>" />
     <meta property="og:url" content="<?php echo htmlspecialchars($page_meta['canonical']); ?>" />
-    <meta property="og:image" content="https://yourdomain.com/path/to/og-image.jpg" />
+    <meta property="og:image" content="https://sunsari2.com/assets/images/og-image.jpg" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="<?php echo htmlspecialchars($page_meta['title']); ?>" />
     <meta name="twitter:description" content="<?php echo htmlspecialchars($page_meta['meta_description']); ?>" />
-    <meta name="twitter:image" content="https://yourdomain.com/path/to/twitter-image.jpg" />
+    <meta name="twitter:image" content="https://sunsari2.com/assets/images/twitter-image.jpg" />
 
     <!-- Geographic Meta Tags -->
     <meta name="geo.region" content="<?php echo $geo_tags['geo.region']; ?>" />
@@ -67,9 +67,16 @@ $t = $translations[$lang];
     <meta name="ICBM" content="<?php echo $geo_tags['ICBM']; ?>" />
 
     <!-- Hreflang tags for multilingual SEO -->
-    <link rel="alternate" hreflang="en" href="https://yourdomain.com/<?php echo $current_page_key; ?>.php?lang=en" />
-    <link rel="alternate" hreflang="ne" href="https://yourdomain.com/<?php echo $current_page_key; ?>.php?lang=ne" />
-    <link rel="alternate" hreflang="x-default" href="https://yourdomain.com/<?php echo $current_page_key; ?>.php" />
+    <link rel="alternate" hreflang="en" href="https://sunsari2.com/<?php echo $current_page_key; ?>?lang=en" />
+    <link rel="alternate" hreflang="ne" href="https://sunsari2.com/<?php echo $current_page_key; ?>?lang=ne" />
+    <link rel="alternate" hreflang="x-default" href="https://sunsari2.com/<?php echo $current_page_key; ?>" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
 
     <!-- Styles and Fonts -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -136,12 +143,12 @@ $t = $translations[$lang];
     <!-- Universal Header Section -->
     <header class="bg-primary text-white py-6 px-4 md:px-12 shadow-lg">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <a href="index" class="flex items-center gap-4 group">
-                <div class=" p-2 rounded-lg shadow-sm group-hover:shadow-md transition-all">
-                    <img src="assets/images/logo.png" alt="Sunsari-2 Logo" class="h-14 w-auto object-contain">
+            <a href="/" class="flex items-center gap-4 group">
+                <div class=" p-2 rounded-lg shadow-sm">
+                    <img src="/assets/images/logo.png" alt="Sunsari-2 Logo" class="h-14 w-auto object-contain">
                 </div>
                 <div>
-                    <h1 class="text-2xl font-bold leading-tight">News Sunsari-2</h1>
+                    <h1 class="text-2xl font-bold leading-tight">Sunsari-2 Constituency</h1>
                     <p class="text-white/80 text-sm">Koshi Province, Nepal • Data Management System</p>
                 </div>
             </a>

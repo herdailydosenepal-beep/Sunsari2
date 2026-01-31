@@ -13,21 +13,21 @@ $page_config = [
         'title' => 'Sunsari-2 Constituency | Koshi Province Nepal Election Data',
         'meta_description' => 'Complete constituency data for Sunsari-2: Dewangunj, Harinagara, Ramdhuni, Inaruwa, Itahari. Demographics, wards, political strategy, and election information.',
         'meta_keywords' => 'Sunsari-2, Koshi Province, Nepal election, constituency data, Dewangunj, Harinagara, Inaruwa, Ramdhuni, Itahari',
-        'canonical' => 'https://yourdomain.com/',
+        'canonical' => 'https://sunsari2.com/',
         'og_type' => 'website'
     ],
     'candidate' => [
         'title' => '[Candidate Name] - Sunsari-2 Candidate Profile & Political Vision',
         'meta_description' => 'Meet [Candidate Name], candidate for Sunsari-2 constituency. Learn about political vision, development priorities, and commitments to Dewangunj, Harinagara, Ramdhuni, Inaruwa, and Itahari.',
         'meta_keywords' => '[Candidate Name], Sunsari-2 candidate, Nepal election, political profile, campaign promises',
-        'canonical' => 'https://yourdomain.com/candidate.php',
+        'canonical' => 'https://sunsari2.com/candidate',
         'og_type' => 'profile'
     ],
     'blogs' => [
         'title' => 'Sunsari-2 News & Political Updates | Campaign Blog',
         'meta_description' => 'Latest news, updates, and political analysis from Sunsari-2 constituency. Campaign activities, local issues, development projects, and community engagement.',
         'meta_keywords' => 'Sunsari-2 news, political blog, campaign updates, local issues, Nepal politics',
-        'canonical' => 'https://yourdomain.com/blogs.php',
+        'canonical' => 'https://sunsari2.com/blogs',
         'og_type' => 'blog'
     ]
 ];

@@ -14,7 +14,7 @@ if (!$post_id) {
     <main class="max-w-7xl mx-auto p-4 md:p-8 space-y-12">
         <!-- Breadcrumbs -->
         <nav class="flex items-center gap-2 text-sm font-medium">
-            <a class="text-primary hover:underline" href="index.php">Home</a>
+            <a class="text-primary hover:underline" href="../index.php">Home</a>
             <span class="material-symbols-outlined text-xs text-slate-400">chevron_right</span>
             <span class="text-slate-500">All Articles</span>
         </nav>
@@ -50,6 +50,35 @@ if (!$found_post) {
 
 $display_posts = [$found_post];
 ?>
+
+<!-- Structured Data (JSON-LD) for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "<?php echo htmlspecialchars($found_post['title']); ?>",
+  "description": "<?php echo htmlspecialchars($found_post['summary']); ?>",
+  "image": "https://sunsari2.com/<?php echo htmlspecialchars($found_post['image_url']); ?>",
+  "author": {
+    "@type": "Person",
+    "name": "<?php echo htmlspecialchars($found_post['author']); ?>"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sunsari-2 Constituency",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://sunsari2.com/assets/images/logo.png"
+    }
+  },
+  "datePublished": "<?php echo date('c', strtotime($found_post['date'])); ?>",
+  "dateModified": "<?php echo date('c', strtotime($found_post['date'])); ?>",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://sunsari2.com/blogs?id=<?php echo htmlspecialchars($found_post['id']); ?>"
+  }
+}
+</script>
 
 <!-- Single Post View -->
 <main class="max-w-[1200px] mx-auto px-6 py-8">

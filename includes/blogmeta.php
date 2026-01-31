@@ -280,23 +280,7 @@ $person_schema = [
     <link rel="preconnect" href="https://cdn.tailwindcss.com">
 </head>
 <body class="bg-gray-50">
-    <!-- Header -->
-    <header class="bg-primary text-white py-6 px-4 md:px-12 shadow-lg">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <a href="../../index.php" class="flex items-center gap-4">
-                <span class="material-symbols-outlined text-4xl">map</span>
-                <div>
-                    <h1 class="text-2xl font-bold leading-tight">Sunsari-2 Constituency</h1>
-                    <p class="text-white/80 text-sm">Koshi Province, Nepal • Sujan Lama Campaign</p>
-                </div>
-            </a>
-            <nav class="flex gap-4">
-                <a href="../../index.php" class="text-white/80 hover:text-white font-bold transition">Home</a>
-                <a href="../../candidate.php" class="text-white/80 hover:text-white font-bold transition">Candidate</a>
-                <a href="../../blogs.php" class="text-white/80 hover:text-white font-bold transition">Blog</a>
-                <a href="https://sujanlama.com" target="_blank" class="text-white/80 hover:text-white font-bold transition">About Sujan</a>
-            </nav>
-        </div>
+    
     </header>
     
     <!-- Breadcrumbs -->

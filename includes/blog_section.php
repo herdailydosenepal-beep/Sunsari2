@@ -1,13 +1,8 @@
 <!-- Blog Posts Section -->
 <section class="mt-8">
-    <div class="flex items-center justify-between mb-6">
-        <div class="flex items-center gap-3">
-            <span class="material-symbols-outlined text-primary text-3xl">article</span>
-            <h2 class="text-2xl font-bold text-slate-800 dark:text-white">Sunsari Politics and Updates</h2>
-        </div>
-        <a href="admin/post/index.php" class="bg-primary text-white px-4 py-2 rounded-lg font-bold hover:bg-opacity-90 transition-all text-sm">
-            + New Article
-        </a>
+    <div class="flex items-center gap-3 mb-6">
+        <span class="material-symbols-outlined text-primary text-3xl">article</span>
+        <h2 class="text-2xl font-bold text-slate-800 dark:text-white">Sunsari Politics and Updates</h2>
     </div>
 
     <?php
@@ -120,10 +115,17 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <?php if (!empty($paginated_posts)): ?>
             <?php foreach ($paginated_posts as $post): ?>
-                <article class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-lg transition-shadow">
+                <article class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
                     <?php if (!empty($post['image_url'])): ?>
                         <div class="h-48 overflow-hidden">
-                            <img src="<?php echo htmlspecialchars($post['image_url']); ?>" 
+                            <?php
+                            // Ensure image path is absolute (starts with /)
+                            $image_path = $post['image_url'];
+                            if (strpos($image_path, '/') !== 0 && strpos($image_path, 'http') !== 0) {
+                                $image_path = '/' . $image_path;
+                            }
+                            ?>
+                            <img src="<?php echo htmlspecialchars($image_path); ?>" 
                                  alt="<?php echo htmlspecialchars($post['alt_text'] ?? ''); ?>"
                                  class="w-full h-full object-cover">
                         </div>
@@ -165,8 +167,13 @@
                             $filename = preg_replace('/[^a-z0-9]+/', '-', $filename);
                             $filename = trim($filename, '-');
                             $filename = substr($filename, 0, 50);
+                            
+                            // Determine if we're in root or subdirectory
+                            $blog_link = (strpos($_SERVER['REQUEST_URI'], '/blogs') !== false) 
+                                ? "sunsari/{$filename}.php" 
+                                : "blogs/sunsari/{$filename}.php";
                             ?>
-                            <a href="blogs/sunsari/<?php echo $filename; ?>.php" 
+                            <a href="<?php echo $blog_link; ?>" 
                                class="text-primary hover:text-primary/80 font-bold text-sm">
                                 Read More →
                             </a>
@@ -179,9 +186,9 @@
                 <?php if ($selected_category !== 'all' || !empty($search_query)): ?>
                     <span class="material-symbols-outlined text-slate-300 text-6xl mb-4 block">search_off</span>
                     <p class="text-slate-500 text-lg mb-2">No articles found matching your criteria</p>
-                    <a href="?" class="text-primary font-bold hover:underline">Clear filters</a>
+                    <a href="?" class="text-primary font-bold">Clear filters</a>
                 <?php else: ?>
-                    <p class="text-slate-500 text-lg">No blog posts yet. <a href="admin/post/index.php" class="text-primary font-bold">Create your first post</a></p>
+                    <p class="text-slate-500 text-lg">No updates available at the moment.</p>
                 <?php endif; ?>
             </div>
         <?php endif; ?>

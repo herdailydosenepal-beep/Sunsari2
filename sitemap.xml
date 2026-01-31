@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Homepage -->
+    <url>
+        <loc>https://sunsari2.com/</loc>
+        <lastmod>2026-01-30</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- Candidate Page -->
+    <url>
+        <loc>https://sunsari2.com/candidate</loc>
+        <lastmod>2026-01-30</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Blog Listing Page -->
+    <url>
+        <loc>https://sunsari2.com/blogs</loc>
+        <lastmod>2026-01-30</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Individual Blog Posts -->
+    <url>
+        <loc>https://sunsari2.com/blogs/sunsari/sujan-lama-a-visionary-leader-for-sunsari-2-consti.php</loc>
+        <lastmod>2026-01-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://sunsari2.com/blogs/sunsari/sujan-lama-s-10-point-development-plan-for-sunsari.php</loc>
+        <lastmod>2026-01-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://sunsari2.com/blogs/sunsari/how-sujan-lama-is-revolutionizing-agriculture-in-s.php</loc>
+        <lastmod>2026-01-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://sunsari2.com/blogs/sunsari/sujan-lama-s-education-first-policy-transforming-s.php</loc>
+        <lastmod>2026-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://sunsari2.com/blogs/sunsari/sujan-lama-s-healthcare-mission-accessible-medical.php</loc>
+        <lastmod>2026-01-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://sunsari2.com/blogs/sunsari/sujan-lama-champions-women-empowerment-initiatives.php</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://sunsari2.com/blogs/sunsari/sujan-lama-s-smart-city-vision-making-itahari-a-di.php</loc>
+        <lastmod>2026-01-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://sunsari2.com/blogs/sunsari/tourism-and-cultural-heritage-sujan-lama-s-plan-fo.php</loc>
+        <lastmod>2026-01-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://sunsari2.com/blogs/sunsari/sujan-lama-s-environmental-sustainability-mission-.php</loc>
+        <lastmod>2026-01-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://sunsari2.com/blogs/sunsari/youth-employment-and-entrepreneurship-sujan-lama-s.php</loc>
+        <lastmod>2026-01-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+</urlset>
